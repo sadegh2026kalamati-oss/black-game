@@ -1,104 +1,32 @@
-const gameData = {
-  forza:{title:"Forza Horizon 5",desc:"یک بازی مسابقه‌ای جهان‌باز با مجموعه‌ای گسترده از خودروها و محیط متنوع مکزیک.",genre:"مسابقه‌ای",url:"https://store.steampowered.com/app/1551360/Forza_Horizon_5/"},
-  rdr2:{title:"Red Dead Redemption 2",desc:"ماجراجویی داستان‌محور در دنیای غرب وحشی با محیطی بزرگ و جزئیات فراوان.",genre:"جهان‌باز",url:"https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"},
-  cyber:{title:"Cyberpunk 2077",desc:"یک نقش‌آفرینی اکشن در شهر آینده‌نگر نایت‌سیتی.",genre:"نقش‌آفرینی",url:"https://store.steampowered.com/app/1091500/Cyberpunk_2077/"},
-  ets2:{title:"Euro Truck Simulator 2",desc:"شبیه‌ساز رانندگی کامیون با مسیرهای گسترده در اروپا.",genre:"شبیه‌سازی",url:"https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/"},
-  witcher:{title:"The Witcher 3",desc:"یک ماجراجویی فانتزی و نقش‌آفرینی در جهانی گسترده.",genre:"نقش‌آفرینی",url:"https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/"},
-  elden:{title:"Elden Ring",desc:"کاوش در سرزمین‌های فانتزی و ناشناخته با مبارزه‌ها و چالش‌های گوناگون.",genre:"اکشن",url:"https://store.steampowered.com/app/1245620/ELDEN_RING/"},
-  gta:{title:"Grand Theft Auto V",desc:"گشت‌وگذار در شهر بزرگ Los Santos و تجربه یک ماجراجویی جهان‌باز.",genre:"جهان‌باز",url:"https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/"},
-  hogwarts:{title:"Hogwarts Legacy",desc:"ورود به دنیای جادویی هاگوارتز و تجربه یک ماجراجویی فانتزی.",genre:"اکشن",url:"https://store.steampowered.com/app/990080/Hogwarts_Legacy/"}
+const data={
+rdr2:{name:"Red Dead Redemption 2",desc:"یک ماجراجویی داستانی در غرب وحشی؛ با دنیایی زنده، شخصیت‌های به‌یادماندنی و آزادی در کاوش.",genre:"OPEN WORLD · ADVENTURE",img:"https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg",url:"https://store.steampowered.com/app/1174180/Red_Dead_Redemption_2/"},
+forza:{name:"Forza Horizon 5",desc:"جشنواره‌ای از سرعت و رانندگی در محیط‌های متنوع مکزیک، همراه با مجموعه‌ای بزرگ از خودروها.",genre:"RACING · OPEN WORLD",img:"https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg",url:"https://store.steampowered.com/app/1551360/Forza_Horizon_5/"},
+cyber:{name:"Cyberpunk 2077",desc:"در نقش V وارد نایت‌سیتی شو؛ شهری آینده‌نگر که انتخاب‌ها و مسیر داستان را شکل می‌دهند.",genre:"ACTION · RPG",img:"https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg",url:"https://store.steampowered.com/app/1091500/Cyberpunk_2077/"},
+ets2:{name:"Euro Truck Simulator 2",desc:"پشت فرمان کامیون بنشین، بار جابه‌جا کن و مسیرهای متنوع اروپا را تجربه کن.",genre:"SIMULATION · DRIVING",img:"https://cdn.akamai.steamstatic.com/steam/apps/227300/header.jpg",url:"https://store.steampowered.com/app/227300/Euro_Truck_Simulator_2/"},
+witcher:{name:"The Witcher 3",desc:"در نقش گرالت، در جهانی فانتزی سفر کن و با تصمیم‌هایی روبه‌رو شو که پیامد دارند.",genre:"FANTASY · RPG",img:"https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg",url:"https://store.steampowered.com/app/292030/The_Witcher_3_Wild_Hunt/"},
+elden:{name:"Elden Ring",desc:"سرزمین‌های میانه را کاوش کن و با چالش‌های گوناگون در یک دنیای فانتزی روبه‌رو شو.",genre:"ACTION · RPG",img:"https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg",url:"https://store.steampowered.com/app/1245620/ELDEN_RING/"},
+gta:{name:"Grand Theft Auto V",desc:"در شهر Los Santos آزادانه بگرد و داستان سه شخصیت متفاوت را دنبال کن.",genre:"OPEN WORLD · ACTION",img:"https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg",url:"https://store.steampowered.com/app/271590/Grand_Theft_Auto_V/"},
+hogwarts:{name:"Hogwarts Legacy",desc:"در یک ماجراجویی جادویی به دنیای هاگوارتز قدم بگذار و مسیر خودت را بساز.",genre:"ADVENTURE · ACTION",img:"https://cdn.akamai.steamstatic.com/steam/apps/990080/header.jpg",url:"https://store.steampowered.com/app/990080/Hogwarts_Legacy/"}
 };
-
-const searchInput = document.getElementById("searchInput");
-const cards = [...document.querySelectorAll(".game-card")];
-const emptyState = document.getElementById("emptyState");
-const resultCount = document.getElementById("resultCount");
-const sortSelect = document.getElementById("sortSelect");
-const grid = document.getElementById("gameGrid");
-let activeCategory = "همه";
-
-function filterGames(){
-  const term = searchInput.value.trim().toLocaleLowerCase("fa");
-  let visible = 0;
-  cards.forEach(card => {
-    const matchesTerm = card.dataset.name.toLocaleLowerCase("fa").includes(term);
-    const matchesCategory = activeCategory === "همه" || card.dataset.category === activeCategory;
-    const show = matchesTerm && matchesCategory;
-    card.hidden = !show;
-    if(show) visible++;
-  });
-  emptyState.hidden = visible !== 0;
-  resultCount.textContent = `${visible} بازی`;
-}
-searchInput.addEventListener("input", filterGames);
-
-document.querySelectorAll(".genre-tile").forEach(button => {
-  button.addEventListener("click", () => {
-    document.querySelector(".genre-tile.active")?.classList.remove("active");
-    button.classList.add("active");
-    activeCategory = button.dataset.category;
-    filterGames();
-    document.getElementById("games").scrollIntoView({behavior:"smooth",block:"start"});
-  });
-});
-
-sortSelect.addEventListener("change", () => {
-  const sorted = [...cards].sort((a,b) => {
-    const x = a.querySelector("h3").textContent.toLocaleLowerCase();
-    const y = b.querySelector("h3").textContent.toLocaleLowerCase();
-    if(sortSelect.value === "az") return x.localeCompare(y);
-    if(sortSelect.value === "za") return y.localeCompare(x);
-    return cards.indexOf(a) - cards.indexOf(b);
-  });
-  sorted.forEach(card => grid.appendChild(card));
-});
-
-const modal = document.getElementById("modal");
-function openGame(id){
-  const game = gameData[id];
-  if(!game) return;
-  document.getElementById("modalTitle").textContent = game.title;
-  document.getElementById("modalDesc").textContent = game.desc;
-  document.getElementById("modalGenre").textContent = game.genre;
-  document.getElementById("officialLink").href = game.url;
-  modal.hidden = false;
-  document.getElementById("modalClose").focus();
-}
-document.querySelectorAll(".details-btn").forEach(button => {
-  button.addEventListener("click", () => openGame(button.dataset.game));
-});
-document.getElementById("modalClose").addEventListener("click", () => modal.hidden = true);
-modal.addEventListener("click", event => { if(event.target === modal) modal.hidden = true; });
-document.addEventListener("keydown", event => { if(event.key === "Escape") modal.hidden = true; });
-
-let favorites = [];
-try { favorites = JSON.parse(localStorage.getItem("blackGameFavorites") || "[]"); } catch {}
-function updateFavorites(){
-  document.querySelectorAll(".favorite").forEach(button => {
-    const saved = favorites.includes(button.dataset.fav);
-    button.classList.toggle("saved", saved);
-    button.textContent = saved ? "♥" : "♡";
-    button.setAttribute("aria-pressed", String(saved));
-  });
-}
-document.querySelectorAll(".favorite").forEach(button => {
-  button.addEventListener("click", () => {
-    const id = button.dataset.fav;
-    favorites = favorites.includes(id) ? favorites.filter(item => item !== id) : [...favorites,id];
-    try { localStorage.setItem("blackGameFavorites", JSON.stringify(favorites)); } catch {}
-    updateFavorites();
-  });
-});
-updateFavorites();
-
-const menuButton = document.getElementById("mobileMenu");
-const nav = document.getElementById("mainNav");
-menuButton.addEventListener("click", () => nav.classList.toggle("open"));
-nav.querySelectorAll("a").forEach(link => link.addEventListener("click", () => nav.classList.remove("open")));
-
-document.querySelectorAll(".game-art img").forEach(img => {
-  img.addEventListener("error", () => {
-    img.style.display = "none";
-    img.parentElement.classList.add("image-fallback");
-  });
-});
+const cards=[...document.querySelectorAll(".game-card")],search=document.getElementById("search"),filters=[...document.querySelectorAll(".filter")],sort=document.getElementById("sort");
+let category="all",favorites=[];try{favorites=JSON.parse(localStorage.getItem("bg4-favs")||"[]")}catch{}
+const count=document.getElementById("wishCount"),toast=document.getElementById("toast");
+function notify(t){toast.textContent=t;toast.classList.add("show");clearTimeout(window.bgToast);window.bgToast=setTimeout(()=>toast.classList.remove("show"),1800)}
+function renderFavs(){document.querySelectorAll(".game-card").forEach(c=>{let b=c.querySelector(".heart"),on=favorites.includes(c.dataset.id);b.classList.toggle("saved",on);b.textContent=on?"♥":"♡";b.setAttribute("aria-pressed",String(on))});count.textContent=favorites.length;try{localStorage.setItem("bg4-favs",JSON.stringify(favorites))}catch{}}
+function filterGames(){let q=search.value.trim().toLocaleLowerCase("fa"),shown=0;cards.forEach(c=>{let okCat=category==="all"||c.dataset.genre===category,okQ=(c.dataset.name+" "+c.dataset.titleFa).toLocaleLowerCase("fa").includes(q),show=okCat&&okQ;c.hidden=!show;if(show)shown++});document.getElementById("noResults").hidden=shown>0}
+search.addEventListener("input",filterGames);
+filters.forEach(b=>b.addEventListener("click",()=>{filters.forEach(x=>x.classList.remove("active"));b.classList.add("active");category=b.dataset.filter;filterGames()}));
+sort.addEventListener("change",()=>{let sorted=[...cards];if(sort.value==="az")sorted.sort((a,b)=>a.dataset.name.localeCompare(b.dataset.name));if(sort.value==="za")sorted.sort((a,b)=>b.dataset.name.localeCompare(a.dataset.name));if(sort.value==="featured")sorted.sort((a,b)=>Number(a.querySelector(".card-index").textContent)-Number(b.querySelector(".card-index").textContent));sorted.forEach(c=>document.getElementById("games").append(c))});
+document.querySelectorAll(".heart").forEach(b=>b.addEventListener("click",()=>{let id=b.closest(".game-card").dataset.id;favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];renderFavs();notify(favorites.includes(id)?"به علاقه‌مندی‌ها اضافه شد":"از علاقه‌مندی‌ها حذف شد")}));
+function openModal(id){let g=data[id];if(!g)return;document.getElementById("modalName").textContent=g.name;document.getElementById("modalDesc").textContent=g.desc;document.getElementById("modalGenre").textContent=g.genre;document.getElementById("modalImg").src=g.img;document.getElementById("modalImg").alt=g.name;document.getElementById("steamLink").href=g.url;let f=document.getElementById("modalFav");f.dataset.id=id;f.textContent=favorites.includes(id)?"♥ در علاقه‌مندی‌ها":"♡ افزودن به علاقه‌مندی‌ها";document.getElementById("modal").hidden=false}
+document.querySelectorAll("[data-open]").forEach(b=>b.addEventListener("click",()=>openModal(b.dataset.open)));
+document.getElementById("modalX").addEventListener("click",()=>document.getElementById("modal").hidden=true);
+document.getElementById("modal").addEventListener("click",e=>{if(e.target.id==="modal")e.currentTarget.hidden=true});
+document.addEventListener("keydown",e=>{if(e.key==="Escape"){document.getElementById("modal").hidden=true;document.getElementById("searchOverlay").hidden=true}});
+document.getElementById("modalFav").addEventListener("click",e=>{let id=e.currentTarget.dataset.id;favorites=favorites.includes(id)?favorites.filter(x=>x!==id):[...favorites,id];renderFavs();e.currentTarget.textContent=favorites.includes(id)?"♥ در علاقه‌مندی‌ها":"♡ افزودن به علاقه‌مندی‌ها"});
+document.getElementById("wishlistJump").addEventListener("click",()=>{category="all";filters.forEach(x=>x.classList.toggle("active",x.dataset.filter==="all"));search.value="";filterGames();cards.forEach(c=>c.hidden=!favorites.includes(c.dataset.id));document.getElementById("noResults").hidden=favorites.length>0;document.getElementById("discover").scrollIntoView({behavior:"smooth"})});
+document.querySelectorAll(".collection").forEach(b=>b.addEventListener("click",()=>{category=b.dataset.collection;filters.forEach(x=>x.classList.toggle("active",x.dataset.filter===category));search.value="";filterGames();document.getElementById("discover").scrollIntoView({behavior:"smooth"})}));
+const overlay=document.getElementById("searchOverlay");document.getElementById("openSearch").addEventListener("click",()=>{overlay.hidden=false;setTimeout(()=>document.getElementById("overlayInput").focus(),50)});document.getElementById("closeSearch").addEventListener("click",()=>overlay.hidden=true);document.getElementById("overlayInput").addEventListener("input",e=>{search.value=e.target.value;category="all";filters.forEach(x=>x.classList.toggle("active",x.dataset.filter==="all"));filterGames()});document.getElementById("overlayInput").addEventListener("keydown",e=>{if(e.key==="Enter"){overlay.hidden=true;document.getElementById("discover").scrollIntoView({behavior:"smooth"})}});
+const toggle=document.getElementById("menuToggle"),nav=document.getElementById("nav");toggle.addEventListener("click",()=>nav.classList.toggle("open"));nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>nav.classList.remove("open")));
+document.querySelectorAll(".cover img").forEach(img=>img.addEventListener("error",()=>{img.style.opacity=".15"}));
+renderFavs();
