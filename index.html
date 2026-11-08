@@ -1,119 +1,15 @@
-<!doctype html>
-<html lang="fa" dir="rtl">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="BLACK GAME؛ مرجع فارسی معرفی بازی‌های کامپیوتر، مشخصات سیستم، اخبار و راهنمای نصب بازی‌ها.">
-  <meta name="theme-color" content="#0b0b0f">
-  <title>BLACK GAME | دنیای بازی‌های کامپیوتر</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <div class="topline"></div>
-  <header class="header">
-    <a class="brand" href="#" aria-label="صفحه اصلی BLACK GAME">
-      <span class="brand-mark">B<span>G</span></span>
-      <span class="brand-name">BLACK <b>GAME</b><small>دنیای بازی‌ها</small></span>
-    </a>
-    <nav class="nav">
-      <a class="active" href="#home">خانه</a>
-      <a href="#games">بازی‌ها</a>
-      <a href="#categories">دسته‌بندی</a>
-      <a href="#about">درباره ما</a>
-    </nav>
-    <a class="header-btn" href="#games"><span>⌕</span> کشف بازی‌ها</a>
-    <button class="menu-toggle" aria-label="باز کردن منو">☰</button>
-  </header>
-
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-glow"></div>
-      <div class="hero-copy">
-        <div class="eyebrow"><i></i> پایگاه بازی‌های کامپیوتر</div>
-        <h1>بازی بعدی تو<br><span>اینجاست.</span></h1>
-        <p>جدیدترین بازی‌ها را کشف کن، مشخصات سیستم را بررسی کن و راهنمای نصب و دریافت نسخه قانونی را پیدا کن.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#games">مشاهده بازی‌ها <b>←</b></a>
-          <a class="btn btn-ghost" href="#categories">دسته‌بندی‌ها</a>
-        </div>
-        <div class="hero-stats">
-          <div><strong>PC</strong><small>مخصوص کامپیوتر</small></div>
-          <div><strong>FA</strong><small>محتوای فارسی</small></div>
-          <div><strong>∞</strong><small>ماجراجویی بی‌پایان</small></div>
-        </div>
-      </div>
-      <div class="hero-art" aria-label="تصویر تزئینی گیمینگ">
-        <div class="art-orbit orbit-one"></div><div class="art-orbit orbit-two"></div>
-        <div class="art-card">
-          <div class="art-tag">PLAYER 01 / READY</div>
-          <div class="controller">🎮</div>
-          <div class="art-title">LEVEL UP<br><span>YOUR GAME</span></div>
-          <div class="art-bottom"><span>BLACK GAME</span><span>EST. 2026</span></div>
-        </div>
-        <span class="float-chip chip-one">⚡ تجربه بهتر</span>
-        <span class="float-chip chip-two">🎯 انتخاب هوشمند</span>
-      </div>
-    </section>
-
-    <section class="search-wrap" aria-label="جستجوی بازی">
-      <div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="اسم بازی موردنظرت رو جست‌وجو کن..." autocomplete="off"><kbd>جست‌وجو</kbd></div>
-      <p>مثلاً: Forza Horizon 5، رد دد، سایبرپانک...</p>
-    </section>
-
-    <section class="section" id="categories">
-      <div class="section-head"><div><span class="kicker">BROWSE BY GENRE</span><h2>دسته‌بندی <em>بازی‌ها</em></h2></div><span class="section-note">سبک موردعلاقه‌ات رو انتخاب کن</span></div>
-      <div class="categories">
-        <button class="category active" data-category="همه"><span>▦</span><b>همه بازی‌ها</b><small>نمایش همه</small></button>
-        <button class="category" data-category="جهان‌باز"><span>🌍</span><b>جهان‌باز</b><small>Open World</small></button>
-        <button class="category" data-category="مسابقه‌ای"><span>🏎</span><b>مسابقه‌ای</b><small>Racing</small></button>
-        <button class="category" data-category="اکشن"><span>⚔</span><b>اکشن</b><small>Action</small></button>
-        <button class="category" data-category="شبیه‌سازی"><span>🛠</span><b>شبیه‌سازی</b><small>Simulation</small></button>
-      </div>
-    </section>
-
-    <section class="section games-section" id="games">
-      <div class="section-head"><div><span class="kicker">HANDPICKED FOR YOU</span><h2>بازی‌های <em>منتخب</em></h2></div><span class="section-note" id="resultCount">۴ بازی</span></div>
-      <div class="game-grid" id="gameGrid">
-        <article class="game-card" data-name="Forza Horizon 5 فورزا هورایزن ۵" data-category="مسابقه‌ای">
-          <div class="game-cover cover-forza"><span class="cover-label">RACING</span><div class="cover-word">FORZA<br><b>HORIZON 5</b></div></div>
-          <div class="game-info"><div class="game-meta"><span>مسابقه‌ای</span><span class="platform">PC</span></div><h3>Forza Horizon 5</h3><p>رانندگی در دنیایی رنگارنگ و جهان‌باز در مکزیک.</p><div class="game-foot"><span class="size">حجم: وابسته به نسخه</span><button class="details-btn" data-game="forza">جزئیات <b>←</b></button></div></div>
-        </article>
-        <article class="game-card" data-name="Red Dead Redemption 2 رد دد ردمپشن ۲" data-category="جهان‌باز">
-          <div class="game-cover cover-rdr"><span class="cover-label">OPEN WORLD</span><div class="cover-word rdr-word">RED DEAD<br><b>REDEMPTION II</b></div></div>
-          <div class="game-info"><div class="game-meta"><span>جهان‌باز</span><span class="platform">PC</span></div><h3>Red Dead Redemption 2</h3><p>ماجراجویی در غرب وحشی با داستانی سینمایی.</p><div class="game-foot"><span class="size">حجم: وابسته به نسخه</span><button class="details-btn" data-game="rdr2">جزئیات <b>←</b></button></div></div>
-        </article>
-        <article class="game-card" data-name="Cyberpunk 2077 سایبرپانک ۲۰۷۷" data-category="اکشن">
-          <div class="game-cover cover-cyber"><span class="cover-label">ACTION RPG</span><div class="cover-word cyber-word">CYBER<br><b>PUNK 2077</b></div></div>
-          <div class="game-info"><div class="game-meta"><span>اکشن</span><span class="platform">PC</span></div><h3>Cyberpunk 2077</h3><p>سفر به شهر آینده‌نگر نایت‌سیتی.</p><div class="game-foot"><span class="size">حجم: وابسته به نسخه</span><button class="details-btn" data-game="cyber">جزئیات <b>←</b></button></div></div>
-        </article>
-        <article class="game-card" data-name="Euro Truck Simulator 2 یورو تراک سیمولاتور ۲" data-category="شبیه‌سازی">
-          <div class="game-cover cover-ets"><span class="cover-label">SIMULATION</span><div class="cover-word ets-word">EURO<br><b>TRUCK SIMULATOR 2</b></div></div>
-          <div class="game-info"><div class="game-meta"><span>شبیه‌سازی</span><span class="platform">PC</span></div><h3>Euro Truck Simulator 2</h3><p>رانندگی کامیون و کشف جاده‌های اروپا.</p><div class="game-foot"><span class="size">حجم: وابسته به نسخه</span><button class="details-btn" data-game="ets2">جزئیات <b>←</b></button></div></div>
-        </article>
-      </div>
-      <div class="empty-state" id="emptyState" hidden>بازی‌ای با این مشخصات پیدا نشد. عبارت دیگری جست‌وجو کن.</div>
-    </section>
-
-    <section class="feature-banner" id="about">
-      <div><span class="kicker">KNOW BEFORE YOU DOWNLOAD</span><h2>قبل از نصب،<br><em>همه‌چیز رو بدون.</em></h2><p>مشخصات سیستم، توضیحات بازی و مسیر دریافت از منابع رسمی؛ همه در یک صفحه.</p></div>
-      <div class="feature-icon">▣</div>
-    </section>
-  </main>
-
-  <footer class="footer"><a class="brand footer-brand" href="#"><span class="brand-mark">B<span>G</span></span><span class="brand-name">BLACK <b>GAME</b><small>دنیای بازی‌ها</small></span></a><p>© ۲۰۲۶ BLACK GAME — تمام حقوق محفوظ است.</p><span>ساخته‌شده برای گیمرها <b>♥</b></span></footer>
-
-  <div class="modal-backdrop" id="modal" hidden>
-    <section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-      <button class="modal-close" id="modalClose" aria-label="بستن">×</button>
-      <span class="kicker">GAME DETAILS</span><h2 id="modalTitle"></h2><p id="modalDesc"></p>
-      <div class="spec-box"><b>مشخصات سیستم</b><p>حداقل و پیشنهادی را پیش از انتشار، بر اساس نسخه دقیق بازی و منبع معتبر تکمیل کنید.</p><div class="spec-row"><span>سیستم‌عامل</span><strong>Windows 10 / 11 (بررسی نسخه)</strong></div><div class="spec-row"><span>پردازنده / کارت گرافیک</span><strong>نیازمند تکمیل</strong></div><div class="spec-row"><span>فضای ذخیره‌سازی</span><strong>نیازمند تکمیل</strong></div></div>
-      <a class="btn btn-primary official-link" id="officialLink" target="_blank" rel="noopener noreferrer">مشاهده صفحه رسمی بازی ↗</a>
-      <small class="modal-hint">این دکمه به صفحه رسمی/فروشگاه بازی می‌رود؛ فایل غیرمجاز یا لینک دانلود غیررسمی ارائه نمی‌شود.</small>
-    </section>
-  </div>
-  <script src="script.js"></script>
-</body>
-</html>
+<!doctype html><n<html lang="fa" dir="rtl"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="description" content="BLACK GAME؛ معرفی بازی‌های کامپیوتر، مشخصات سیستم و راهنمای دریافت از منابع معتبر."><title>BLACK GAME | دنیای بازی‌ها</title><link rel="preconnect" href="https://fonts.googleapis.com"><link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;600;700;800;900&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css"></head><body>
+<header><a class="brand" href="#">🟥 BLACK <b>GAME</b><small>دنیای بازی‌های کامپیوتر</small></a><nav><a href="#home">خانه</a><a href="#games">بازی‌ها</a><a href="#genres">ژانرها</a></nav><button id="adminOpen">ورود مدیر ↗</button></header>
+<main><section class="hero" id="home"><div><label>BLACK GAME / PLAYER HUB</label><h1>بازی بعدی تو<br><em>اینجا منتظرته.</em></h1><p>کشف بازی‌های محبوب کامپیوتر، بررسی مشخصات سیستم و پیدا کردن مسیر دریافت از منابع معتبر؛ همه در یک جا.</p><a class="cta" href="#games">کشف بازی‌ها ←</a></div><div class="poster">🎮<strong>PLAY<br><em>WITHOUT</em><br>LIMITS</strong></div></section>
+<div class="search"><input id="search" placeholder="نام بازی یا ژانر رو جست‌وجو کن..."><button>⌕</button></div>
+<section id="genres"><label>EXPLORE YOUR STYLE</label><h2>دسته‌بندی <em>بازی‌ها</em></h2><div class="genres"><button class="active" data-genre="همه">همه بازی‌ها</button><button data-genre="جهان‌باز">🌍 جهان‌باز</button><button data-genre="مسابقه‌ای">🏎️ مسابقه‌ای</button><button data-genre="اکشن">⚔️ اکشن</button><button data-genre="شبیه‌سازی">🛠️ شبیه‌سازی</button></div></section>
+<section id="games"><label>THE LATEST & GREATEST</label><h2>بازی‌های <em>منتخب</em></h2><div class="games" id="grid">
+<article data-title="Forza Horizon 5 فورزا هورایزن ۵" data-genre="مسابقه‌ای"><div class="cover forza">FORZA<br><b>HORIZON 5</b></div><small>مسابقه‌ای · PC</small><h3>Forza Horizon 5</h3><p>رانندگی در جهان باز و رنگارنگ مکزیک.</p><button class="details" data-id="forza">جزئیات ←</button></article>
+<article data-title="Red Dead Redemption 2 رد دد" data-genre="جهان‌باز"><div class="cover rdr">RED DEAD<br><b>REDEMPTION II</b></div><small>جهان‌باز · PC</small><h3>Red Dead Redemption 2</h3><p>ماجراجویی داستانی در غرب وحشی.</p><button class="details" data-id="rdr">جزئیات ←</button></article>
+<article data-title="Cyberpunk 2077 سایبرپانک" data-genre="اکشن"><div class="cover cyber">CYBER<br><b>PUNK 2077</b></div><small>اکشن · PC</small><h3>Cyberpunk 2077</h3><p>سفر به شهر آینده‌نگر نایت‌سیتی.</p><button class="details" data-id="cyber">جزئیات ←</button></article>
+<article data-title="Euro Truck Simulator 2 یورو تراک" data-genre="شبیه‌سازی"><div class="cover ets">EURO<br><b>TRUCK SIMULATOR 2</b></div><small>شبیه‌سازی · PC</small><h3>Euro Truck Simulator 2</h3><p>رانندگی کامیون در جاده‌های اروپا.</p><button class="details" data-id="ets">جزئیات ←</button></article></div><p id="empty" hidden>نتیجه‌ای پیدا نشد.</p></section>
+<section class="banner"><label>BUILT FOR GAMERS</label><h2>قبل از نصب، <em>با خیال راحت انتخاب کن.</em></h2><p>اطلاعات بازی، مشخصات سیستم و راهنمای دریافت از منابع معتبر.</p></section></main>
+<footer>BLACK GAME © ۲۰۲۶ — ساخته‌شده برای گیمرها</footer>
+<div class="overlay" id="detail" hidden><div class="dialog"><button class="x" data-close="detail">×</button><label>GAME PROFILE</label><h2 id="dt"></h2><p id="dd"></p><div class="spec">مشخصات سیستم: اطلاعات دقیق نسخه بازی باید بررسی و تکمیل شود.</div><a id="official" class="cta" target="_blank" rel="noopener">صفحه رسمی بازی ↗</a></div></div>
+<div class="overlay" id="admin" hidden><div class="dialog"><button class="x" data-close="admin">×</button><label>PRIVATE ADMIN AREA</label><h2>مدیریت <em>BLACK GAME</em></h2><p>طرح اولیه پنل مدیریت. ورود و آپلود واقعی بعد از اتصال سرویس امن فعال می‌شود.</p><div class="warning">🔒 رمز مدیر را داخل کد سایت قرار نمی‌دهیم. GitHub Pages به‌تنهایی امکان آپلود امن و خصوصی ندارد.</div><label>ایمیل مدیر</label><input placeholder="ایمیل مدیر" disabled><label>رمز عبور</label><input placeholder="پس از راه‌اندازی ورود امن فعال می‌شود" disabled><button class="cta" id="login">وضعیت پنل</button><small id="msg">برای فعال‌سازی به Supabase Auth و Storage با دسترسی محدود مدیر نیاز داریم.</small></div></div>
+<script src="script.js"></script></body></html>
