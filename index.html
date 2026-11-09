@@ -1,114 +1,38 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fa" dir="rtl">
 <head>
-<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="theme-color" content="#08090d">
-<title>BLACK GAME — فراتر از بازی</title>
-<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Estedad:wght@400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&family=Vazirmatn:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#090a0d"><meta name="description" content="BLACK GAME؛ دنیای بازی‌های کامپیوتری، معرفی، بررسی و راهنمای انتخاب بازی.">
+  <title>BLACK GAME — دنیای بازی‌ها</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&family=Orbitron:wght@500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="noise"></div>
-<div class="announcement"><span class="live-dot"></span> به BLACK GAME خوش اومدی <span class="announce-divider">/</span> دنیای بازی‌ها با یک تجربه تازه</div>
-<header class="header">
-  <a class="logo" href="#top"><span class="logo-mark">B<span>G</span></span><span class="logo-type"><b>BLACK<span>GAME</span></b><small>LEVEL UP YOUR WORLD</small></span></a>
-  <button class="menu-toggle" id="menuToggle" aria-label="منو">☰</button>
-  <nav id="nav"><a class="nav-active" href="#top">خانه</a><a href="#discover">کشف بازی</a><a href="#collections">کالکشن‌ها</a><a href="#about">درباره ما</a></nav>
-  <div class="header-tools">
-    <button class="icon-btn" id="openSearch" aria-label="جستجو">⌕</button>
-    <button class="wishlist-top" id="wishlistJump"><span>♡</span><b>علاقه‌مندی‌ها</b><i id="wishCount">0</i></button>
-  </div>
-</header>
-
-<main id="top">
-<section class="hero">
-  <div class="hero-bg"></div><div class="hero-vignette"></div>
-  <div class="hero-content">
-    <div class="hero-kicker"><span class="kicker-line"></span> THE ULTIMATE PC GAMING HUB <span class="kicker-chip">BG / 04</span></div>
-    <h1>بازی کن.<br><em>متفاوت زندگی کن.</em></h1>
-    <p>ماجراجویی بعدی‌ات فقط چند کلیک با تو فاصله داره. بازی‌های موردعلاقه‌ات رو کشف کن، جزئیاتشون رو ببین و مجموعه شخصی خودت رو بساز.</p>
-    <div class="hero-ctas"><a class="primary-btn" href="#discover">کشف دنیای بازی‌ها <span>↙</span></a><a class="text-btn" href="#collections">دیدن کالکشن‌ها <span>←</span></a></div>
-    <div class="hero-foot"><span><b>01</b> / 04</span><span class="hero-foot-line"></span><span>CURATED FOR GAMERS</span></div>
-  </div>
-  <div class="hero-feature">
-    <span class="feature-label"><i></i> FEATURED EXPERIENCE</span>
-    <div class="feature-title">RED DEAD<br><b>REDEMPTION II</b></div>
-    <span class="feature-caption">A WORLD THAT NEVER FORGETS</span>
-    <button class="feature-cta" data-open="rdr2">نگاه نزدیک‌تر <span>↗</span></button>
-  </div>
-  <div class="hero-scroll">SCROLL TO EXPLORE <span>↓</span></div>
-</section>
-
-<section class="ticker" aria-label="ویژگی‌های سایت"><div class="ticker-track"><span>DISCOVER GAMES ✳</span><span>YOUR PERSONAL LIBRARY ✳</span><span>BUILT FOR PLAYERS ✳</span><span>DISCOVER GAMES ✳</span><span>YOUR PERSONAL LIBRARY ✳</span><span>BUILT FOR PLAYERS ✳</span></div></section>
-
-<section class="intro section-wrap" id="discover">
- <div class="intro-heading"><div><span class="overline">YOUR NEXT OBSESSION</span><h2>چی بازی کنیم <em>امروز؟</em></h2></div><p>از بین بازی‌های منتخب بگرد، فیلتر کن و انتخاب بعدی‌ات رو پیدا کن.</p></div>
- <div class="control-bar">
-  <label class="searchbox"><span>⌕</span><input id="search" placeholder="اسم بازی یا سبک موردعلاقه‌ات..." type="search"><kbd>⌕</kbd></label>
-  <div class="sort-wrap"><span>مرتب‌سازی:</span><select id="sort"><option value="featured">منتخب BLACK GAME</option><option value="az">نام بازی (الف تا ی)</option><option value="za">نام بازی (ی تا الف)</option></select></div>
- </div>
- <div class="filter-row" id="filters">
-  <button class="filter active" data-filter="all">همه بازی‌ها <span>08</span></button>
-  <button class="filter" data-filter="Open World">جهان‌باز</button>
-  <button class="filter" data-filter="Action">اکشن</button>
-  <button class="filter" data-filter="Racing">مسابقه‌ای</button>
-  <button class="filter" data-filter="RPG">نقش‌آفرینی</button>
-  <button class="filter" data-filter="Simulation">شبیه‌سازی</button>
- </div>
- <div class="games-grid" id="games">
-  <article class="game-card" data-id="rdr2" data-name="Red Dead Redemption 2" data-genre="Open World" data-title-fa="رد دد ردمپشن ۲">
-   <div class="cover"><img src="https://cdn.akamai.steamstatic.com/steam/apps/1174180/header.jpg" alt="Red Dead Redemption 2" loading="lazy"><span class="card-index">01</span><span class="genre-pill">OPEN WORLD</span><button class="heart" aria-label="علاقه‌مندی">♡</button><button class="quick-view" data-open="rdr2">جزئیات بازی <b>↗</b></button></div>
-   <div class="card-body"><div class="card-topline"><span>ROCKSTAR GAMES</span><span class="platform">PC</span></div><h3>Red Dead Redemption 2</h3><p>سفر به غرب وحشی؛ داستانی که فراموش نمی‌کنی.</p><div class="card-bottom"><span class="genre-fa">جهان‌باز · ماجراجویی</span><span class="card-arrow">↙</span></div></div>
-  </article>
-  <article class="game-card" data-id="forza" data-name="Forza Horizon 5" data-genre="Racing" data-title-fa="فورزا هورایزن ۵">
-   <div class="cover"><img src="https://cdn.akamai.steamstatic.com/steam/apps/1551360/header.jpg" alt="Forza Horizon 5" loading="lazy"><span class="card-index">02</span><span class="genre-pill">RACING</span><button class="heart" aria-label="علاقه‌مندی">♡</button><button class="quick-view" data-open="forza">جزئیات بازی <b>↗</b></button></div>
-   <div class="card-body"><div class="card-topline"><span>PLAYGROUND GAMES</span><span class="platform">PC</span></div><h3>Forza Horizon 5</h3><p>جاده‌های مکزیک، ماشین‌های افسانه‌ای و آزادی.</p><div class="card-bottom"><span class="genre-fa">مسابقه‌ای · جهان‌باز</span><span class="card-arrow">↙</span></div></div>
-  </article>
-  <article class="game-card" data-id="cyber" data-name="Cyberpunk 2077" data-genre="RPG" data-title-fa="سایبرپانک ۲۰۷۷">
-   <div class="cover"><img src="https://cdn.akamai.steamstatic.com/steam/apps/1091500/header.jpg" alt="Cyberpunk 2077" loading="lazy"><span class="card-index">03</span><span class="genre-pill">ACTION RPG</span><button class="heart" aria-label="علاقه‌مندی">♡</button><button class="quick-view" data-open="cyber">جزئیات بازی <b>↗</b></button></div>
-   <div class="card-body"><div class="card-topline"><span>CD PROJEKT RED</span><span class="platform">PC</span></div><h3>Cyberpunk 2077</h3><p>در نایت‌سیتی، افسانه خودت رو بساز.</p><div class="card-bottom"><span class="genre-fa">نقش‌آفرینی · اکشن</span><span class="card-arrow">↙</span></div></div>
-  </article>
-  <article class="game-card" data-id="ets2" data-name="Euro Truck Simulator 2" data-genre="Simulation" data-title-fa="یورو تراک سیمولاتور ۲">
-   <div class="cover"><img src="https://cdn.akamai.steamstatic.com/steam/apps/227300/header.jpg" alt="Euro Truck Simulator 2" loading="lazy"><span class="card-index">04</span><span class="genre-pill">SIMULATION</span><button class="heart" aria-label="علاقه‌مندی">♡</button><button class="quick-view" data-open="ets2">جزئیات بازی <b>↗</b></button></div>
-   <div class="card-body"><div class="card-topline"><span>SCS SOFTWARE</span><span class="platform">PC</span></div><h3>Euro Truck Simulator 2</h3><p>فرمان رو بگیر و جاده‌های اروپا رو کشف کن.</p><div class="card-bottom"><span class="genre-fa">شبیه‌سازی · رانندگی</span><span class="card-arrow">↙</span></div></div>
-  </article>
-  <article class="game-card" data-id="witcher" data-name="The Witcher 3" data-genre="RPG" data-title-fa="ویچر ۳">
-   <div class="cover"><img src="https://cdn.akamai.steamstatic.com/steam/apps/292030/header.jpg" alt="The Witcher 3" loading="lazy"><span class="card-index">05</span><span class="genre-pill">FANTASY RPG</span><button class="heart" aria-label="علاقه‌مندی">♡</button><button class="quick-view" data-open="witcher">جزئیات بازی <b>↗</b></button></div>
-   <div class="card-body"><div class="card-topline"><span>CD PROJEKT RED</span><span class="platform">PC</span></div><h3>The Witcher 3</h3><p>در جهانی پر از افسانه، انتخاب با توست.</p><div class="card-bottom"><span class="genre-fa">نقش‌آفرینی · فانتزی</span><span class="card-arrow">↙</span></div></div>
-  </article>
-  <article class="game-card" data-id="elden" data-name="Elden Ring" data-genre="Action" data-title-fa="الدن رینگ">
-   <div class="cover"><img src="https://cdn.akamai.steamstatic.com/steam/apps/1245620/header.jpg" alt="Elden Ring" loading="lazy"><span class="card-index">06</span><span class="genre-pill">ACTION RPG</span><button class="heart" aria-label="علاقه‌مندی">♡</button><button class="quick-view" data-open="elden">جزئیات بازی <b>↗</b></button></div>
-   <div class="card-body"><div class="card-topline"><span>FROM SOFTWARE</span><span class="platform">PC</span></div><h3>Elden Ring</h3><p>سرزمین‌های میانه منتظر کشف شدن هستند.</p><div class="card-bottom"><span class="genre-fa">اکشن · فانتزی</span><span class="card-arrow">↙</span></div></div>
-  </article>
-  <article class="game-card" data-id="gta" data-name="Grand Theft Auto V" data-genre="Open World" data-title-fa="جی تی ای ۵">
-   <div class="cover"><img src="https://cdn.akamai.steamstatic.com/steam/apps/271590/header.jpg" alt="Grand Theft Auto V" loading="lazy"><span class="card-index">07</span><span class="genre-pill">OPEN WORLD</span><button class="heart" aria-label="علاقه‌مندی">♡</button><button class="quick-view" data-open="gta">جزئیات بازی <b>↗</b></button></div>
-   <div class="card-body"><div class="card-topline"><span>ROCKSTAR GAMES</span><span class="platform">PC</span></div><h3>Grand Theft Auto V</h3><p>شهر Los Santos و داستان‌های بی‌پایانش.</p><div class="card-bottom"><span class="genre-fa">جهان‌باز · اکشن</span><span class="card-arrow">↙</span></div></div>
-  </article>
-  <article class="game-card" data-id="hogwarts" data-name="Hogwarts Legacy" data-genre="Action" data-title-fa="هاگوارتز لگسی">
-   <div class="cover"><img src="https://cdn.akamai.steamstatic.com/steam/apps/990080/header.jpg" alt="Hogwarts Legacy" loading="lazy"><span class="card-index">08</span><span class="genre-pill">ADVENTURE</span><button class="heart" aria-label="علاقه‌مندی">♡</button><button class="quick-view" data-open="hogwarts">جزئیات بازی <b>↗</b></button></div>
-   <div class="card-body"><div class="card-topline"><span>AVALANCHE SOFTWARE</span><span class="platform">PC</span></div><h3>Hogwarts Legacy</h3><p>ماجراجویی جادویی خودت رو در هاگوارتز شروع کن.</p><div class="card-bottom"><span class="genre-fa">ماجراجویی · اکشن</span><span class="card-arrow">↙</span></div></div>
-  </article>
- </div>
- <div class="no-results" id="noResults" hidden>چیزی پیدا نکردیم؛ فیلتر یا عبارت جست‌وجو رو تغییر بده.</div>
-</section>
-
-<section class="collections section-wrap" id="collections">
- <div class="intro-heading"><div><span class="overline">HANDPICKED FOR YOU</span><h2>کالکشن‌های <em>ویژه</em></h2></div><p>برای هر حال‌وهوایی، یک دنیای تازه.</p></div>
- <div class="collection-grid">
-  <button class="collection collection-red" data-collection="Open World"><span class="collection-no">COLLECTION / 01</span><b>گم شو<br>در یک دنیای تازه.</b><span class="collection-bottom">OPEN WORLD <i>↙</i></span></button>
-  <button class="collection collection-blue" data-collection="Racing"><span class="collection-no">COLLECTION / 02</span><b>فقط گاز بده.<br>جاده مال توئه.</b><span class="collection-bottom">RACING <i>↙</i></span></button>
-  <button class="collection collection-gold" data-collection="RPG"><span class="collection-no">COLLECTION / 03</span><b>قهرمان<br>داستان خودت باش.</b><span class="collection-bottom">ROLE PLAYING <i>↙</i></span></button>
- </div>
-</section>
-
-<section class="bottom-banner" id="about"><div class="banner-mark">BG<span>.</span></div><div><span class="overline">THIS IS YOUR PLAYGROUND</span><h2>بازی بعدی، <em>داستان بعدی.</em></h2><p>BLACK GAME؛ یک خانه برای کشف بازی‌های کامپیوتر.</p></div><a href="#discover">برگرد به بازی‌ها <b>↑</b></a></section>
-</main>
-
-<footer><a class="logo" href="#top"><span class="logo-mark">B<span>G</span></span><span class="logo-type"><b>BLACK<span>GAME</span></b><small>LEVEL UP YOUR WORLD</small></span></a><p>© ۲۰۲۶ BLACK GAME · ساخته‌شده برای گیمرها</p><a href="#top">بازگشت به بالا ↑</a></footer>
-
-<div class="search-overlay" id="searchOverlay" hidden><div class="search-panel"><button id="closeSearch" class="close-search">×</button><span class="overline">QUICK SEARCH</span><h2>چی تو ذهنته؟</h2><input id="overlayInput" placeholder="نام بازی رو بنویس..."><p>با تایپ، نتایج بازی‌ها فیلتر می‌شن.</p></div></div>
-<div class="modal-backdrop" id="modal" hidden><div class="game-modal" role="dialog" aria-modal="true" aria-labelledby="modalName"><button class="modal-x" id="modalX">×</button><div class="modal-cover"><img id="modalImg" alt=""></div><div class="modal-content"><span class="overline">GAME PROFILE / BLACK GAME</span><h2 id="modalName"></h2><p id="modalDesc"></p><div class="modal-tags"><span id="modalGenre"></span><span>PC GAMING</span><span>GAME DETAILS</span></div><div class="modal-actions"><a id="steamLink" target="_blank" rel="noopener">صفحه بازی در استیم ↗</a><button id="modalFav">♡ افزودن به علاقه‌مندی‌ها</button></div><small>برای اطلاعات دقیق سیستم موردنیاز، نسخه بازی را در صفحه رسمی بررسی کن.</small></div></div></div>
-<div class="toast" id="toast"></div>
-<script src="script.js"></script>
+  <div class="noise"></div>
+  <div class="topline"><span class="pulse"></span> دنیای بازی‌ها، یک قدم جلوتر <span class="topline-right">BLACK GAME <b>5.0</b></span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="BLACK GAME"><span class="brand-mark">B<span>G</span></span><span class="brand-copy"><b>BLACK<span>GAME</span></b><small>PLAY BEYOND LIMITS</small></span></a>
+    <nav class="main-nav" id="mainNav"><a class="active" href="#home">خانه</a><a href="#store">فروشگاه</a><a href="#genres">ژانرها</a><a href="#about">درباره ما</a></nav>
+    <div class="header-actions"><button class="icon-btn" id="themeBtn" aria-label="تغییر تم" title="تغییر تم">◐</button><button class="icon-btn favorite-head" id="favoritesBtn" aria-label="علاقه‌مندی‌ها">♡<i id="favCount">0</i></button><button class="menu-btn" id="menuBtn" aria-label="باز کردن منو">☰</button><a class="header-cta" href="#store">کشف بازی‌ها <span>↙</span></a></div>
+  </header>
+  <main id="home">
+    <section class="hero wrap">
+      <div class="hero-copy"><div class="eyebrow"><span></span> LEVEL UP YOUR WORLD</div><h1>بازی بعدی تو،<br><em>اینجا</em> منتظرته.</h1><p>دنیایی از بازی‌های هیجان‌انگیز را کشف کن؛ بررسی کن، مقایسه کن و انتخاب بعدی‌ات را هوشمندانه‌تر انجام بده.</p><div class="hero-actions"><a class="btn-primary" href="#store">مشاهده بازی‌ها <span>←</span></a><a class="btn-ghost" href="#genres"><span class="play-icon">▶</span> گشت‌وگذار در ژانرها</a></div><div class="hero-stats"><div><b>01<span>K+</span></b><small>دنیای بی‌پایان بازی</small></div><i></i><div><b>08</b><small>بازی منتخب این نسخه</small></div><i></i><div><b>24<span>/7</span></b><small>همیشه در دسترس</small></div></div></div>
+      <div class="hero-art"><div class="hero-orbit orbit-one"></div><div class="hero-orbit orbit-two"></div><div class="hero-glow"></div><div class="hero-card-main"><div class="hero-card-top"><span>FEATURED UNIVERSE</span><span class="live-dot">● LIVE</span></div><div class="hero-figure"><div class="figure-sun"></div><div class="figure-mountain m1"></div><div class="figure-mountain m2"></div><div class="figure-person">◢</div></div><div class="hero-card-bottom"><div><small>YOUR NEXT ADVENTURE</small><b>STARTS HERE.</b></div><span class="hero-index">05 / 25</span></div></div><div class="float-chip chip-top">✦ <span>DISCOVER</span></div><div class="float-chip chip-bottom"><b>GAME ON</b><small>NO LIMITS.</small></div><div class="hero-cross">✳</div></div>
+    </section>
+    <section class="ticker"><div class="ticker-track"><span>DISCOVER NEW WORLDS</span><b>✦</b><span>PLAY YOUR WAY</span><b>✦</b><span>LEVEL UP EVERY DAY</span><b>✦</b><span>DISCOVER NEW WORLDS</span><b>✦</b><span>PLAY YOUR WAY</span><b>✦</b><span>LEVEL UP EVERY DAY</span></div></section>
+    <section class="wrap store-section" id="store">
+      <div class="section-head"><div><div class="eyebrow"><span></span> THE COLLECTION</div><h2>گنجینه‌ی <em>بازی‌ها</em></h2><p>ماجراجویی بعدی‌ات را از میان انتخاب‌های ویژه پیدا کن.</p></div><div class="section-side"><span class="catalog-count" id="catalogCount">۰۸ بازی</span><a href="#store" class="text-link" id="showAll">مشاهده همه <b>←</b></a></div></div>
+      <div class="store-toolbar"><div class="search-box"><span>⌕</span><input id="searchInput" type="search" placeholder="اسم بازی یا ژانر رو جست‌وجو کن..." autocomplete="off"><kbd>⌘ K</kbd></div><div class="toolbar-right"><select id="sortSelect" aria-label="مرتب‌سازی"><option value="featured">پیشنهادی</option><option value="az">نام: الف تا ی</option><option value="rating">بالاترین امتیاز</option></select><button class="filter-toggle" id="favoritesOnly">♡ فقط علاقه‌مندی‌ها</button></div></div>
+      <div class="genre-chips" id="genreFilters"><button class="chip active" data-genre="all">همه بازی‌ها <span>08</span></button><button class="chip" data-genre="action">اکشن</button><button class="chip" data-genre="adventure">ماجراجویی</button><button class="chip" data-genre="racing">مسابقه‌ای</button><button class="chip" data-genre="rpg">نقش‌آفرینی</button><button class="chip" data-genre="open">جهان‌باز</button></div>
+      <div class="game-grid" id="gameGrid"></div><div class="empty-state" id="emptyState" hidden><span>⌕</span><b>چیزی پیدا نشد!</b><p>عبارت جست‌وجو یا فیلترها رو تغییر بده.</p><button class="btn-ghost" id="resetFilters">پاک کردن فیلترها</button></div>
+    </section>
+    <section class="genre-section" id="genres"><div class="wrap"><div class="section-head"><div><div class="eyebrow"><span></span> PICK YOUR STYLE</div><h2>با چه دنیایی <em>حال می‌کنی؟</em></h2><p>ژانر موردعلاقه‌ات رو انتخاب کن و وارد ماجرا شو.</p></div></div><div class="genre-grid"><button class="genre-tile genre-action" data-pick="action"><span>01 / COMBAT</span><b>اکشن</b><small>نبرد، هیجان، آدرنالین</small><i>↙</i></button><button class="genre-tile genre-rpg" data-pick="rpg"><span>02 / ROLE PLAY</span><b>نقش‌آفرینی</b><small>داستان‌هایی برای زندگی کردن</small><i>↙</i></button><button class="genre-tile genre-racing" data-pick="racing"><span>03 / SPEED</span><b>مسابقه‌ای</b><small>سرعت را لمس کن</small><i>↙</i></button><button class="genre-tile genre-adventure" data-pick="adventure"><span>04 / EXPLORE</span><b>ماجراجویی</b><small>هر گوشه، یک کشف تازه</small><i>↙</i></button></div></div></section>
+    <section class="manifesto wrap" id="about"><div class="manifesto-mark">BG<span>®</span></div><div><div class="eyebrow"><span></span> MORE THAN A STORE</div><h2>فقط بازی نیست؛<br><em>یک سبک زندگیه.</em></h2><p>BLACK GAME جایی برای کشف تجربه‌های تازه، شناخت بازی‌ها و پیدا کردن ماجراجویی بعدی توئه. ساده، سریع و برای گیمرها.</p></div><div class="manifesto-stamp">PLAY<br><b>MORE.</b><br>WORRY<br>LESS.</div></section>
+  </main>
+  <footer class="site-footer"><div class="wrap footer-inner"><a class="brand" href="#home"><span class="brand-mark">B<span>G</span></span><span class="brand-copy"><b>BLACK<span>GAME</span></b><small>PLAY BEYOND LIMITS</small></span></a><p>ساخته‌شده برای عاشقان دنیای بازی‌ها.</p><span>© 2026 BLACK GAME · v5.0</span></div></footer>
+  <div class="modal-backdrop" id="gameModal" hidden><section class="game-modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><button class="modal-close" id="modalClose" aria-label="بستن">×</button><div class="modal-cover" id="modalCover"></div><div class="modal-content"><div class="eyebrow"><span></span> GAME PROFILE</div><h2 id="modalTitle"></h2><div class="modal-meta" id="modalMeta"></div><p id="modalDescription"></p><div class="spec-box"><b>حداقل سیستم موردنیاز</b><div id="modalSpecs"></div></div><a class="btn-primary modal-link" id="officialLink" target="_blank" rel="noopener noreferrer">وب‌سایت رسمی بازی ↗</a></div></section></div>
+  <button class="to-top" id="toTop" aria-label="رفتن به بالای صفحه">↑</button>
+  <script src="script.js"></script>
 </body></html>
